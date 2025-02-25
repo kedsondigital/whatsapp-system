@@ -16,6 +16,7 @@ app.use(express.json());
 // Definir rotas
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/users', require('./routes/users'));
+app.use('/api/whatsapp', require('./routes/whatsapp'));
 
 // Rota de teste
 app.get('/api/test', (req, res) => {
