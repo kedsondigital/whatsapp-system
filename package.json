@@ -27,6 +27,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.2",
     "qrcode": "^1.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "whatsapp-web.js": "^1.26.0"
   },
   "devDependencies": {

@@ -1,3 +1,37 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const ScheduleMessage = () => {
+  const [formData, setFormData] = useState({
+    groupId: '',
+    message: '',
+    scheduledTime: ''
+  });
+  const [scheduledMessages, setScheduledMessages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [fetchingMessages, setFetchingMessages] = useState(true);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const { groupId, message, scheduledTime } = formData;
+
+  useEffect(() => {
+    fetchScheduledMessages();
+  }, []);
+
+  const fetchScheduledMessages = async () => {
+    setFetchingMessages(true);
+    try {
+      const res = await axios.get('/api/whatsapp/scheduled');
+      setScheduledMessages(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+    setFetchingMessages(false);
+  };
+
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const onSubmit = async (e) => {
     e.preventDefault();
     setError('');

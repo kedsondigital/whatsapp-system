@@ -60,7 +60,7 @@ const Login = () => {
                   value={password}
                   onChange={onChange}
                   required
-                />
+              />
               </div>
               <button type="submit" className="btn btn-primary">Login</button>
             </form>

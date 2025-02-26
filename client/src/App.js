@@ -59,7 +59,7 @@ const App = () => {
               path="/whatsapp/schedule" 
               element={
                 <PrivateRoute>
-                 <ScheduleMessage />
+                  <ScheduleMessage />
                 </PrivateRoute>
               } 
             />
